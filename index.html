@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Data dari Google Sheets</title>
+    <!-- Tambahkan link Bootstrap CSS di sini -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>Data dari Google Sheets</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <?php include 'data.php'; ?>
+                    <?php foreach ($headers as $header): ?>
+                    <th><?= $header ?></th>
+                    <?php endforeach; ?>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($columnData as $row): ?>
+                <tr>
+                    <?php foreach ($row as $cell): ?>
+                    <td><?= $cell ?></td>
+                    <?php endforeach; ?>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <!-- Tambahkan link Bootstrap JS di sini -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
